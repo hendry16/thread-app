@@ -50,4 +50,3 @@ describe('Login spec', () => {
     cy.get('button').contains('Logout').should('be.visible');
   });
 });
-
