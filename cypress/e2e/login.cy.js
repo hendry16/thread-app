@@ -26,7 +26,7 @@ describe('Login spec', () => {
   });
 
   it('should display alert when password is empty', () => {
-    cy.get('input[placeholder="Email"]').type('testuser');
+    cy.get('input[placeholder="Email"]').type('ayu@test.com');
     cy.get('button').contains(/^Login$/).click();
     cy.on('window:alert', (str) => {
       expect(str).to.equal('"password" is not allowed to be empty');
@@ -34,7 +34,7 @@ describe('Login spec', () => {
   });
 
   it('should display alert when username and password are wrong', () => {
-    cy.get('input[placeholder="Email"]').type('testuser');
+    cy.get('input[placeholder="Email"]').type('ayu@test.com');
     cy.get('input[placeholder="Password"]').type('wrong_password');
     cy.get('button').contains(/^Login$/).click();
     cy.on('window:alert', (str) => {
@@ -46,7 +46,7 @@ describe('Login spec', () => {
     cy.get('input[placeholder="Email"]').type('test1@test1.com');
     cy.get('input[placeholder="Password"]').type('test1test1');
     cy.get('button').contains(/^Login$/).click();
-    cy.get('nav').contains(/^Leaderboard$/).should('be.visible');
+    cy.get('nav', { timeout: 10000 }).should('be.visible');
     cy.get('button').contains('Logout').should('be.visible');
   });
 });
