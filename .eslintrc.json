@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:storybook/recommended",
+    "plugin:cypress/recommended"
+  ],
+  "plugins": [
+    "cypress"
+  ],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "no-alert": "off",
+    "react/jsx-no-bind": "off",
+    "react/button-has-type": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/no-extraneous-dependencies": "off",
+    "default-param-last": "off"
+  }
+}
