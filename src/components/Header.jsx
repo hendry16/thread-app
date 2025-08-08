@@ -10,7 +10,7 @@ function Header({ }) {
       <Link to="/">
         <h1 className="text-2xl text-gray-800 font-semibold">Threads</h1>
       </Link>
-      {logout && <Navigation logout={logout} />}
+      {logout && <Navigation logout={} />}
     </header>
   );
 }
